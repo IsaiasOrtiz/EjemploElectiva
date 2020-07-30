@@ -24,33 +24,8 @@ require 'conexion.php';
   
   //Validar el rol
   $_SESSION['username'] = $usuario;
-  $rol =$row[2];
-  $_SESSION['rol']=$rol;
   
-  
-  
-    switch($_SESSION['rol']){
-      case 1:
-       
-            header('Location: ../pages/indexCatedratico.php?status=success');
-      
-      break;
-      
-      case 2:
-      
-      header('Location: ../pages/indexDirector.php?status=success');
-      
-      break;
-      
-      case 3:
-      
-      header('Location: ../pages/indexDecano.php?status=success');
-      
-      break;
-       default:
- 
-      
-    }
+
   
   }
   else{
