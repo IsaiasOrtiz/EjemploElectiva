@@ -11,7 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo "Hola mundo ";
+        require_once 'conexion.php';
+        $sql = "select * from usuario";
+        $sentencia = $pdo->prepare($sql);
+        $sentencia->execute();
+        $listar = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        print_r($listar);
         ?>
     </body>
 </html>
