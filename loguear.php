@@ -20,7 +20,7 @@ require 'conexion.php';
     
   $_SESSION['username'] = $usuario;
   
-   // header('Location: ../pages/index.php?status=success'); 
+   header('Location: inicio.php?status=success'); 
   
   //Validar el rol
   $_SESSION['username'] = $usuario;
