@@ -7,16 +7,15 @@ require 'conexion.php';
   $usuario=$_POST['usuario'];
   $clave=$_POST['clave'];
 
-  $Conexion = new ConexionBD;
-  $conn = $Conexion->greet();
+  
 
- $query=$conn->prepare("select * from usuarios where usuario=? and clave=?");
+ $query=$pdo->prepare("select * from usuario where usuario=? and clave=?");
 
   $query->execute([$usuario,$clave]);
 
   $row=$query->fetch(PDO::FETCH_NUM);
-
-  if($row==true){
+  
+  if($query->rowCount()>0){
     
   $_SESSION['username'] = $usuario;
   
